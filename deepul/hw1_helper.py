@@ -3,6 +3,7 @@ from .utils import *
 
 # Question 1
 def q1_sample_data_1():
+    print('hello sample data')
     count = 1000
     rand = np.random.RandomState(0)
     samples = 0.4 + 0.1 * rand.randn(count)
