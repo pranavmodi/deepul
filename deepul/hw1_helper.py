@@ -10,6 +10,7 @@ def q1_sample_data_1():
     data = np.digitize(samples, np.linspace(0.0, 1.0, 20))
     split = int(0.8 * len(data))
     train_data, test_data = data[:split], data[split:]
+    print(train_data.shape)
     return train_data, test_data
 
 
@@ -56,6 +57,9 @@ def q1_save_results(dset_type, part, fn):
         raise Exception('Invalid dset_type:', dset_type)
 
     train_losses, test_losses, distribution = fn(train_data, test_data, d, dset_type)
+
+    print(distribution)
+
     assert np.allclose(np.sum(distribution), 1), f'Distribution sums to {np.sum(distribution)} != 1'
 
     print(f'Final Test Loss: {test_losses[-1]:.4f}')
