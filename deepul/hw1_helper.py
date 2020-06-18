@@ -3,7 +3,7 @@ from .utils import *
 
 # Question 1
 def q1_sample_data_1():
-    print('hello sample data')
+    print('hello sample data1')
     count = 1000
     rand = np.random.RandomState(0)
     samples = 0.4 + 0.1 * rand.randn(count)
@@ -80,6 +80,7 @@ def q2_a_sample_data(image_file, n, d):
 
     im = Image.open(image_file).resize((d, d)).convert('L')
     im = np.array(im).astype('float32')
+    print('the shape of image is', im.shape)
     dist = im / im.sum()
 
     pairs = list(itertools.product(range(d), range(d)))
