@@ -82,6 +82,8 @@ def q2_a_sample_data(image_file, n, d):
     im = np.array(im).astype('float32')
     print('the shape of image is', im.shape)
     dist = im / im.sum()
+    print(im)
+    print(dist)
 
     pairs = list(itertools.product(range(d), range(d)))
     idxs = np.random.choice(len(pairs), size=n, replace=True, p=dist.reshape(-1))
